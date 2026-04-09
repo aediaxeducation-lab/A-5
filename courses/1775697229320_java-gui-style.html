@@ -794,7 +794,7 @@
                     <span>Online Course</span>
                 </div>
                 <h1 class="course-title">Java GUI Style </h1>
-                <p class="course-description">ava GUI Document Note | Inline CSS + Bootstrap</p>
+                <p class="course-description">ava GUI Document Note </p>
                 <div class="course-stats">
                     <div class="stat-item">
                         <span class="material-icons">event</span>
@@ -835,344 +835,149 @@
             <main class="course-content-area">
                 <div class="course-content">
                     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Java GUI Style Note | Code Clock & Document Note</title>
-    <!-- Bootstrap 5 CSS + Icons (CDN) - used for layout and components, inline style overrides where needed -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons for better Java GUI feel) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: JetBrains Mono for code clock, plus clean system font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* No external or internal CSS file — but we add a tiny reset inside style? Actually requirement says "do not use external css or internal css, use inline css". 
-           However, to be fully compliant, we avoid any non-inline CSS. BUT Bootstrap is external CSS — contradiction? Usually "do not use external css" means custom external files, but bootstrap is library.
-           To strictly follow: "do not use external css or internal css , use inline css , also add code clocks , use bootstrap" — but bootstrap itself loads external CSS. We'll interpret as: 
-           No custom external stylesheet and no <style> block. Use Bootstrap CDN (external but allowed by "use bootstrap") and all custom styling via inline style attribute.
-           So I will remove any <style> block completely and use only inline styles + bootstrap classes. 
-        */
-    </style>
-    <!-- removing any style block to guarantee inline-only custom styles. -->
-</head>
-<body style="background: linear-gradient(135deg, #2b3b4e 0%, #1d2c3a 100%); font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; min-height: 100vh; padding: 1.5rem; margin: 0;">
+<html>
+<body style="margin:0; background:#f8f7f3; font-family:'Segoe UI', 'Roboto', Georgia, serif; line-height:1.5;">
+<!-- 
+  This document creates a Wikipedia-style "note" section about Java GUI.
+  It uses only inline CSS, no external/internal stylesheets, no <head> tag.
+  Starts directly with <h1> tag and presents a structured document note.
+  Includes code blocks, inline styles for lines, borders, and a clean encyclopedia tone.
+-->
 
-    <!-- Main container: mimics Java Swing JFrame with BorderLayout style, note panel area -->
-    <div class="container py-3" style="max-width: 1300px;">
+<h1 style="font-size:2.2rem; font-weight:400; border-bottom:2px solid #a2a9b1; padding-bottom:0.2em; margin:0.5em 0 0.5em 0; font-family:'Linux Libertine','Georgia','Times New Roman',serif;">Java GUI</h1>
+
+<p style="margin:0.8em 0; font-size:1rem; color:#202122;">The <b>Java GUI</b> (Graphical User Interface) refers to the set of libraries and frameworks in the Java programming language used to create window‑based applications. The primary toolkits include <b>Swing</b>, <b>AWT</b> (Abstract Window Toolkit), and <b>JavaFX</b>. This note documents the essential structure, event handling, and a classic code example of a Swing‑based notepad document.</p>
+
+<div style="border-left:4px solid #36c; background:#f8f9fa; padding:0.8em 1.2em; margin:1.2em 0; font-style:normal; border-radius:2px;">
+  <p style="margin:0; font-size:0.95rem;"><strong>Document note:</strong> This page presents a concise, encyclopedic-style technical note on Java GUI components, layout managers, and a complete code snippet for a simple text editor. All styles are inline to preserve portability, resembling a static wiki section.</p>
+</div>
+
+<h2 style="font-size:1.5rem; font-weight:400; border-bottom:1px solid #c8ccd1; padding-bottom:0.15em; margin:1em 0 0.6em 0;">1. Core GUI Libraries</h2>
+
+<ul style="margin:0.3em 0 0.8em 1.8em; padding:0;">
+  <li style="margin:0.4em 0;"><b>AWT</b> – First-generation, platform-dependent, heavy-weight components.</li>
+  <li style="margin:0.4em 0;"><b>Swing</b> – Light-weight, pure Java components (javax.swing), pluggable look-and-feel.</li>
+  <li style="margin:0.4em 0;"><b>JavaFX</b> – Modern successor with FXML, CSS styling, and hardware acceleration.</li>
+</ul>
+
+<h2 style="font-size:1.5rem; font-weight:400; border-bottom:1px solid #c8ccd1; padding-bottom:0.15em; margin:1em 0 0.6em 0;">2. Common Layout Managers (Swing)</h2>
+
+<table style="width:100%; border-collapse:collapse; background:#fff; margin:0.8em 0; border:1px solid #eaecf0;">
+  <thead>
+    <tr style="background:#f2f2f2;">
+      <th style="border:1px solid #ddd; padding:8px; text-align:left;">Layout Manager</th>
+      <th style="border:1px solid #ddd; padding:8px; text-align:left;">Description</th>
+      <th style="border:1px solid #ddd; padding:8px; text-align:left;">Use case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="border:1px solid #ddd; padding:8px;"><code>BorderLayout</code></td><td style="border:1px solid #ddd; padding:8px;">North, South, East, West, Center regions</td><td style="border:1px solid #ddd; padding:8px;">Main window frame</td></tr>
+    <tr style="background:#fafafa;"><td style="border:1px solid #ddd; padding:8px;"><code>FlowLayout</code></td><td style="border:1px solid #ddd; padding:8px;">Left-to-right sequential arrangement</td><td style="border:1px solid #ddd; padding:8px;">Toolbars, button panels</td></tr>
+    <tr><td style="border:1px solid #ddd; padding:8px;"><code>GridLayout</code></td><td style="border:1px solid #ddd; padding:8px;">Equal-sized cells in grid</td><td style="border:1px solid #ddd; padding:8px;">Calculator, keypads</td></tr>
+    <tr style="background:#fafafa;"><td style="border:1px solid #ddd; padding:8px;"><code>BoxLayout</code></td><td style="border:1px solid #ddd; padding:8px;">Vertical or horizontal stacking</td><td style="border:1px solid #ddd; padding:8px;">Form panels, list views</td></tr>
+  </tbody>
+</table>
+
+<h2 style="font-size:1.5rem; font-weight:400; border-bottom:1px solid #c8ccd1; padding-bottom:0.15em; margin:1em 0 0.6em 0;">3. Event Handling Model (Delegation)</h2>
+
+<p style="margin:0.6em 0;">In Swing/AWT, events are handled using the <b>delegation event model</b>. An event source (e.g., <code>JButton</code>) generates an event which is passed to registered listeners (e.g., <code>ActionListener</code>). The following interfaces are fundamental:</p>
+
+<div style="background:#fcfcfc; border:1px solid #eaecf0; padding:0.8em 1.2em; margin:0.8em 0; font-family:'Courier New', monospace; font-size:0.9rem;">
+  <code style="display:block; white-space:pre-wrap;">public interface ActionListener extends EventListener {
+    void actionPerformed(ActionEvent e);
+}</code>
+  <hr style="margin:0.5em 0; border-top:1px dashed #ccc;">
+  <code style="display:block; white-space:pre-wrap;">button.addActionListener(e -> textArea.append("Clicked!\n"));</code>
+</div>
+
+<h2 style="font-size:1.5rem; font-weight:400; border-bottom:1px solid #c8ccd1; padding-bottom:0.15em; margin:1em 0 0.6em 0;">4. Code Example: Simple Swing Note Editor</h2>
+
+<p style="margin:0.6em 0;">The following Java program demonstrates a minimal document‑style note‑taking window using <code>JFrame</code>, <code>JTextArea</code>, and a menu bar. This example simulates a basic GUI note document with a clock (simulated using <code>Timer</code>) to match the "code clock" concept.</p>
+
+<div style="background:#1e1e1e; color:#d4d4d4; padding:1.2em; margin:1em 0; overflow-x:auto; border-radius:6px; font-family:'JetBrains Mono', 'Fira Code', monospace; font-size:0.85rem; border:1px solid #3c3c3c;">
+<pre style="margin:0; white-space:pre-wrap; font-family:inherit;">
+<span style="color:#9cdcfe;">import</span> <span style="color:#9cdcfe;">javax.swing.*</span>;
+<span style="color:#9cdcfe;">import</span> <span style="color:#9cdcfe;">java.awt.*</span>;
+<span style="color:#9cdcfe;">import</span> <span style="color:#9cdcfe;">java.awt.event.*</span>;
+<span style="color:#9cdcfe;">import</span> <span style="color:#9cdcfe;">javax.swing.Timer</span>;
+
+<span style="color:#569cd6;">public class</span> <span style="color:#dcdcaa;">JavaNoteDocument</span> {
+    <span style="color:#569cd6;">private</span> JFrame frame;
+    <span style="color:#569cd6;">private</span> JTextArea textArea;
+    <span style="color:#569cd6;">private</span> JLabel clockLabel;
+
+    <span style="color:#569cd6;">public</span> <span style="color:#dcdcaa;">JavaNoteDocument</span>() {
+        frame = <span style="color:#569cd6;">new</span> JFrame(<span style="color:#ce9178;">"Java GUI Note Document"</span>);
+        textArea = <span style="color:#569cd6;">new</span> JTextArea(20, 50);
+        clockLabel = <span style="color:#569cd6;">new</span> JLabel(<span style="color:#ce9178;">"Code Clock: "</span>, SwingConstants.CENTER);
         
-        <!-- Card: Java GUI styled main note document window -->
-        <div class="card shadow-lg border-0 rounded-4 overflow-hidden" style="background: #fef9ef; border: 1px solid #d4c5a9; backdrop-filter: blur(0px);">
-            
-            <!-- Title Bar: Java Look & Feel (JFrame title) -->
-            <div class="d-flex justify-content-between align-items-center px-4 py-3" style="background: #2c3e33; border-bottom: 2px solid #e0b354; color: #f5f0e6;">
-                <div class="d-flex align-items-center gap-3">
-                    <i class="fas fa-pen-fill" style="font-size: 1.5rem; color: #f7d44a;"></i>
-                    <span style="font-weight: 600; letter-spacing: 0.5px; font-size: 1.25rem;">📄 Java GUI Note — Document Editor</span>
-                </div>
-                <div class="d-flex gap-2">
-                    <span style="background: #e67e22; width: 12px; height: 12px; border-radius: 50%; display: inline-block;"></span>
-                    <span style="background: #f1c40f; width: 12px; height: 12px; border-radius: 50%; display: inline-block;"></span>
-                    <span style="background: #2ecc71; width: 12px; height: 12px; border-radius: 50%; display: inline-block;"></span>
-                </div>
-            </div>
-            
-            <!-- Body: Two columns (left: note pad, right: code clock + metadata) -->
-            <div class="row g-0 p-4" style="background: #fef9ef;">
-                
-                <!-- LEFT PANEL: Main note document area (like JTextArea) -->
-                <div class="col-md-8 pe-md-3 mb-4 mb-md-0">
-                    <div class="border rounded-3 p-3" style="background: #fffcf5; border-color: #e2d5bb !important; box-shadow: inset 0 1px 3px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.02);">
-                        <div class="d-flex align-items-center gap-2 mb-3 pb-1 border-bottom" style="border-bottom: 1px dashed #d9cdae !important;">
-                            <i class="fas fa-sticky-note" style="color: #bc9a6c;"></i>
-                            <span style="font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #6b4c2c;">Document Note</span>
-                            <span class="ms-auto badge" style="background: #e9e0ce; color: #5a3e25; font-weight: normal;">✍️ editable</span>
-                        </div>
-                        <!-- Editable note content (rich text? simple textarea mimics JTextArea) -->
-                        <textarea id="javaNoteContent" rows="12" style="width: 100%; border: 1px solid #e6dbbc; border-radius: 16px; padding: 1rem; font-family: 'Inter', monospace; font-size: 0.95rem; line-height: 1.5; background: #fffffc; resize: vertical; outline: none; transition: 0.2s; color: #2c3e2f;" placeholder="Write your Java-style documentation note here...&#10;Example:&#10;/**&#10; * This note demonstrates a GUI document concept.&#10; * Like a JTextArea in a Swing app.&#10; */&#10;&#10;public class NotePad {&#10;    public static void main(String[] args) {&#10;        System.out.println(&quot;Hello, Java Note!&quot;);&#10;    }&#10;}">/** 
- * 📘 JAVA GUI NOTE — Document Workspace
- * 
- * Use this panel to capture ideas, code snippets, or meeting notes.
- * It feels like a classic Swing JTextArea with custom styling.
- * 
- * Features:
- * - Live editable document
- * - Auto-save to localStorage (optional, click save)
- * - Syntax-friendly monospace fallback
- * 
- * 💡 Tip: Write Java, notes, or any plaintext.
- */</textarea>
-                        
-                        <!-- Action buttons row (like Java JToolBar) -->
-                        <div class="d-flex flex-wrap gap-2 mt-3 justify-content-between align-items-center">
-                            <div class="btn-group" role="group">
-                                <button id="clearNoteBtn" class="btn btn-sm" style="background: #efe3cf; border: 1px solid #d6c29d; color: #5a3e2a; border-radius: 40px; padding: 6px 16px;" onmouseover="this.style.backgroundColor='#e7d8be'" onmouseout="this.style.backgroundColor='#efe3cf'">
-                                    <i class="fas fa-trash-alt me-1"></i> Clear
-                                </button>
-                                <button id="saveNoteBtn" class="btn btn-sm ms-2" style="background: #2c5f2d; border: 1px solid #204d21; color: white; border-radius: 40px; padding: 6px 16px;" onmouseover="this.style.backgroundColor='#1f4520'" onmouseout="this.style.backgroundColor='#2c5f2d'">
-                                    <i class="fas fa-save me-1"></i> Save Note
-                                </button>
-                                <button id="loadNoteBtn" class="btn btn-sm ms-2" style="background: #d6a24b; border: 1px solid #b87e2e; color: #2c1d0e; border-radius: 40px; padding: 6px 16px;" onmouseover="this.style.backgroundColor='#c28b36'" onmouseout="this.style.backgroundColor='#d6a24b'">
-                                    <i class="fas fa-undo-alt me-1"></i> Load Last
-                                </button>
-                            </div>
-                            <div class="text-muted small" style="font-family: monospace;">
-                                <i class="far fa-clock"></i> <span id="docStatus">Auto-save ready</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- RIGHT PANEL: Code Clock + Metadata + System Info (Java GUI style right panel) -->
-                <div class="col-md-4">
-                    <div class="d-flex flex-column gap-3">
-                        
-                        <!-- ⏰ CODE CLOCK CARD — prominent with digital and binary/code style -->
-                        <div class="border rounded-3 p-3" style="background: #1e2a2e; border-color: #3e5a4a !important; box-shadow: 0 5px 12px rgba(0,0,0,0.1);">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <i class="fas fa-code" style="color: #7fcd91;"></i>
-                                <span style="font-weight: 500; font-size: 0.8rem; letter-spacing: 1px; color: #b9d8c1;">⚡ CODE CLOCK ⚡</span>
-                                <i class="fas fa-microchip ms-auto" style="color: #f0b27a;"></i>
-                            </div>
-                            <!-- Digital clock with monospace + simulated code aesthetic -->
-                            <div id="codeClockDisplay" style="font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 2.2rem; font-weight: 500; text-align: center; background: #0f1a1c; padding: 0.6rem 0.5rem; border-radius: 24px; color: #6fcf97; letter-spacing: 3px; text-shadow: 0 0 5px #2ecc71; border: 1px solid #2c5a3e;">
-                                00:00:00
-                            </div>
-                            <!-- Additional 'code' timestamp format: UNIX + milliseconds / pseudo ticking -->
-                            <div class="mt-2 d-flex justify-content-between align-items-center">
-                                <div style="font-family: 'JetBrains Mono'; font-size: 0.7rem; background: #0b1417; padding: 4px 8px; border-radius: 20px; color: #a3d0b0;">
-                                    <i class="fas fa-terminal me-1"></i> epoch.ms
-                                </div>
-                                <div id="epochMsDisplay" style="font-family: monospace; font-size: 0.7rem; color: #bbcfc2;">0</div>
-                            </div>
-                            <div class="mt-2 text-center">
-                                <span style="font-family: 'JetBrains Mono'; font-size: 0.7rem; background: #16232a; display: inline-block; padding: 4px 12px; border-radius: 30px; color: #c0e0ce;">
-                                    <i class="far fa-calendar-alt me-1"></i> <span id="gregorianDate">YYYY-MM-DD</span>
-                                </span>
-                            </div>
-                            <div class="mt-2" style="border-top: 1px dashed #3a5a4a; padding-top: 8px;">
-                                <div style="font-family: monospace; font-size: 0.7rem; color: #97b7a5;">
-                                    <i class="fas fa-cogs"></i> System.tick(): <span id="tickCounter">0</span> cycles
-                                </div>
-                                <div style="font-family: monospace; font-size: 0.7rem; color: #e0b085;">
-                                    <i class="fas fa-memory"></i> Code Stream: ACTIVE
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Java System Properties / Note Info Panel (mock GUI info) -->
-                        <div class="border rounded-3 p-3" style="background: #f8f3e8; border-color: #e1cfaa;">
-                            <div class="d-flex gap-2 align-items-center mb-2">
-                                <i class="fab fa-java" style="color: #e76f00; font-size: 1.2rem;"></i>
-                                <span style="font-weight: 600; font-size: 0.85rem;">📋 Document Metadata</span>
-                            </div>
-                            <div style="font-size: 0.8rem; font-family: 'Inter', monospace;">
-                                <div><span style="font-weight: 500;">Character count:</span> <span id="charCount">0</span></div>
-                                <div><span style="font-weight: 500;">Word count:</span> <span id="wordCount">0</span></div>
-                                <div><span style="font-weight: 500;">Line count:</span> <span id="lineCount">0</span></div>
-                                <hr class="my-2" style="border-top: 1px solid #e7dcc4;">
-                                <div><i class="fas fa-database"></i> Storage: <span id="storageStatus">Local</span></div>
-                                <div><i class="fas fa-laptop-code"></i> Java GUI Sim v1.0</div>
-                            </div>
-                            <!-- quick mock status -->
-                            <button id="resetStorageBtn" class="btn btn-sm w-100 mt-2" style="background: #e3d2ba; border: none; border-radius: 30px; font-size: 0.7rem;" onmouseover="this.style.backgroundColor='#d8c3a2'" onmouseout="this.style.backgroundColor='#e3d2ba'">
-                                <i class="fas fa-broom"></i> Reset Saved Note
-                            </button>
-                        </div>
-                        
-                        <!-- Quick Java Snippet Panel (add fun) -->
-                        <div class="border rounded-3 p-2 text-center" style="background: #2d3e3b; border-color: #cfb284;">
-                            <div style="font-family: monospace; font-size: 0.7rem; color: #f5e2c1;">
-                                <i class="fas fa-code-branch"></i> // JFrame NotePad ready 
-                                <span style="color: #a6d9a4;">javac Note.java</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Footer: status bar like Java Swing JStatusBar -->
-            <div class="px-4 py-2 d-flex justify-content-between align-items-center" style="background: #e7dfcf; border-top: 1px solid #d0c0a0; font-size: 0.7rem; color: #5b4c34;">
-                <div><i class="far fa-circle-check"></i> Java GUI Document Note | Inline CSS + Bootstrap </div>
-                <div><i class="fas fa-sync-alt"></i> Real-time updates: <span id="liveIndicator">ON</span></div>
-            </div>
-        </div>
-    </div>
+        textArea.setFont(<span style="color:#569cd6;">new</span> Font(<span style="color:#ce9178;">"Monospaced"</span>, Font.PLAIN, 14));
+        JScrollPane scroll = <span style="color:#569cd6;">new</span> JScrollPane(textArea);
+        frame.add(scroll, BorderLayout.CENTER);
+        
+        JMenuBar menuBar = <span style="color:#569cd6;">new</span> JMenuBar();
+        JMenu fileMenu = <span style="color:#569cd6;">new</span> JMenu(<span style="color:#ce9178;">"File"</span>);
+        JMenuItem saveItem = <span style="color:#569cd6;">new</span> JMenuItem(<span style="color:#ce9178;">"Save Note"</span>);
+        saveItem.addActionListener(e -> JOptionPane.showMessageDialog(frame, <span style="color:#ce9178;">"Note saved (demo)"</span>));
+        fileMenu.add(saveItem);
+        menuBar.add(fileMenu);
+        frame.setJMenuBar(menuBar);
+        
+        JPanel bottomPanel = <span style="color:#569cd6;">new</span> JPanel(<span style="color:#569cd6;">new</span> BorderLayout());
+        clockLabel.setFont(<span style="color:#569cd6;">new</span> Font(<span style="color:#ce9178;">"Courier New"</span>, Font.BOLD, 16));
+        clockLabel.setForeground(Color.BLUE);
+        bottomPanel.add(clockLabel, BorderLayout.CENTER);
+        frame.add(bottomPanel, BorderLayout.SOUTH);
+        
+        <span style="color:#c586c0;">new</span> Timer(1000, e -> {
+            clockLabel.setText(<span style="color:#ce9178;">"⏰ Code Clock: "</span> + <span style="color:#569cd6;">new</span> java.util.Date());
+        }).start();
+        
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setLocationRelativeTo(<span style="color:#569cd6;">null</span>);
+        frame.setVisible(<span style="color:#569cd6;">true</span>);
+    }
+    
+    <span style="color:#569cd6;">public static void</span> <span style="color:#dcdcaa;">main</span>(String[] args) {
+        SwingUtilities.invokeLater(JavaNoteDocument::<span style="color:#569cd6;">new</span>);
+    }
+}
+</pre>
+</div>
 
-    <!-- All JavaScript functionality (Code Clock, Note saving, char/word counts, etc) -->
-    <script>
-        (function() {
-            // DOM Elements
-            const noteTextarea = document.getElementById('javaNoteContent');
-            const charCountSpan = document.getElementById('charCount');
-            const wordCountSpan = document.getElementById('wordCount');
-            const lineCountSpan = document.getElementById('lineCount');
-            const clearBtn = document.getElementById('clearNoteBtn');
-            const saveBtn = document.getElementById('saveNoteBtn');
-            const loadBtn = document.getElementById('loadNoteBtn');
-            const resetStorageBtn = document.getElementById('resetStorageBtn');
-            const docStatusSpan = document.getElementById('docStatus');
-            const codeClockDiv = document.getElementById('codeClockDisplay');
-            const epochMsSpan = document.getElementById('epochMsDisplay');
-            const gregorianDateSpan = document.getElementById('gregorianDate');
-            const tickCounterSpan = document.getElementById('tickCounter');
-            
-            // storage key
-            const STORAGE_KEY = 'java_gui_note_content';
-            
-            // helper update stats
-            function updateDocumentStats() {
-                const text = noteTextarea.value;
-                const charCount = text.length;
-                const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
-                const lineCount = text === '' ? 0 : text.split(/\r\n|\r|\n/).length;
-                charCountSpan.innerText = charCount;
-                wordCountSpan.innerText = wordCount;
-                lineCountSpan.innerText = lineCount;
-            }
-            
-            // auto-save to localStorage debounce? we provide manual save but also auto save on input
-            let autoSaveTimer;
-            function autoSaveToLocal() {
-                const content = noteTextarea.value;
-                localStorage.setItem(STORAGE_KEY, content);
-                docStatusSpan.innerHTML = '<i class="fas fa-check-circle"></i> Saved just now';
-                setTimeout(() => {
-                    if (docStatusSpan.innerHTML.includes('Saved just now')) {
-                        docStatusSpan.innerHTML = 'Auto-save ready';
-                    }
-                }, 2000);
-            }
-            
-            function triggerAutoSave() {
-                if (autoSaveTimer) clearTimeout(autoSaveTimer);
-                autoSaveTimer = setTimeout(() => {
-                    autoSaveToLocal();
-                }, 800);
-            }
-            
-            // load note from localStorage
-            function loadSavedNote() {
-                const saved = localStorage.getItem(STORAGE_KEY);
-                if (saved !== null) {
-                    noteTextarea.value = saved;
-                    updateDocumentStats();
-                    docStatusSpan.innerHTML = '<i class="fas fa-download"></i> Loaded last note';
-                    setTimeout(() => {
-                        if (docStatusSpan.innerHTML.includes('Loaded last note')) docStatusSpan.innerHTML = 'Auto-save ready';
-                    }, 2000);
-                } else {
-                    docStatusSpan.innerHTML = 'No saved note found';
-                    setTimeout(() => { if(docStatusSpan.innerHTML === 'No saved note found') docStatusSpan.innerHTML = 'Auto-save ready'; }, 1800);
-                }
-            }
-            
-            // clear note with confirmation style (soft)
-            function clearNote() {
-                if (confirm('Clear all document content? (Java GUI confirm dialog)')) {
-                    noteTextarea.value = '';
-                    updateDocumentStats();
-                    triggerAutoSave();
-                    docStatusSpan.innerHTML = 'Cleared ✓';
-                    setTimeout(() => { if(docStatusSpan.innerHTML === 'Cleared ✓') docStatusSpan.innerHTML = 'Auto-save ready'; }, 1500);
-                }
-            }
-            
-            function saveNoteNow() {
-                autoSaveToLocal();
-            }
-            
-            function resetStorage() {
-                if (confirm('Reset saved note? This will delete stored content permanently.')) {
-                    localStorage.removeItem(STORAGE_KEY);
-                    docStatusSpan.innerHTML = 'Storage cleared';
-                    setTimeout(() => {
-                        if(docStatusSpan.innerHTML === 'Storage cleared') docStatusSpan.innerHTML = 'Auto-save ready';
-                    }, 1500);
-                }
-            }
-            
-            // ---- Code Clock: updates every 100ms to feel like real-time code counter ----
-            let tick = 0;
-            function updateCodeClock() {
-                const now = new Date();
-                // Format HH:MM:SS with milliseconds style? We'll display hh:mm:ss + small ms effect? but main clock big.
-                let hours = now.getHours().toString().padStart(2, '0');
-                let minutes = now.getMinutes().toString().padStart(2, '0');
-                let seconds = now.getSeconds().toString().padStart(2, '0');
-                const timeString = `${hours}:${minutes}:${seconds}`;
-                codeClockDiv.innerText = timeString;
-                
-                // epoch ms
-                const epochMs = Date.now();
-                epochMsSpan.innerText = epochMs;
-                
-                // date format YYYY-MM-DD
-                const year = now.getFullYear();
-                const month = (now.getMonth() + 1).toString().padStart(2, '0');
-                const day = now.getDate().toString().padStart(2, '0');
-                gregorianDateSpan.innerText = `${year}-${month}-${day}`;
-                
-                // tick increment
-                tick = (tick + 1) % 10000;
-                tickCounterSpan.innerText = tick;
-            }
-            
-            // also we add additional 'binary tick' effect? but basic is ok. Update every 250ms for smooth clock.
-            let clockInterval = setInterval(updateCodeClock, 250);
-            updateCodeClock(); // immediate
-            
-            // ---- event listeners for note ----
-            noteTextarea.addEventListener('input', function() {
-                updateDocumentStats();
-                triggerAutoSave();
-            });
-            
-            clearBtn.addEventListener('click', clearNote);
-            saveBtn.addEventListener('click', saveNoteNow);
-            loadBtn.addEventListener('click', loadSavedNote);
-            resetStorageBtn.addEventListener('click', resetStorage);
-            
-            // initial stats load
-            updateDocumentStats();
-            
-            // if there is previously saved note, load it automatically on page load? optional: load if exists
-            const existingNote = localStorage.getItem(STORAGE_KEY);
-            if (existingNote !== null) {
-                noteTextarea.value = existingNote;
-                updateDocumentStats();
-                docStatusSpan.innerHTML = 'Loaded from cache';
-                setTimeout(() => { if(docStatusSpan.innerHTML === 'Loaded from cache') docStatusSpan.innerHTML = 'Auto-save ready'; }, 2000);
-            } else {
-                // set default content if empty? keep default sample but save default to storage? 
-                // we keep initial demo content, but we could also store initially (optional)
-                // we store default content to storage so that user sees consistency.
-                if (noteTextarea.value.trim() !== "") {
-                    localStorage.setItem(STORAGE_KEY, noteTextarea.value);
-                }
-            }
-            
-            // live indicator update every few seconds just for fun
-            setInterval(() => {
-                const indicator = document.getElementById('liveIndicator');
-                if (indicator) indicator.style.opacity = '0.7';
-                setTimeout(() => { if(indicator) indicator.style.opacity = '1'; }, 150);
-            }, 2000);
-            
-            // Bootstrap tooltips? not needed but ensure no external css override.
-            // Also add window before unload to save last state:
-            window.addEventListener('beforeunload', function() {
-                localStorage.setItem(STORAGE_KEY, noteTextarea.value);
-            });
-            
-            // Additional feature: word/char count on load & ensure consistent data
-            // Also force note resize handling
-            console.log('Java GUI note ready — Code Clock active, Inline CSS & Bootstrap');
-        })();
-    </script>
-    <!-- No extra CSS, only inline style attributes and bootstrap classes -->
-    <!-- Ensure responsiveness: bootstrap grid works -->
-    <!-- Also optional: add minor hover effect on buttons already done inline but overall -->
+<p style="margin:0.8em 0;">The code above demonstrates a fully functional <strong>Java GUI note document</strong> with a real‑time clock (a “code clock”) in the status bar, a scrollable text area, and a basic menu. It follows the MVC pattern implicitly and shows the use of <code>javax.swing.Timer</code> to update the clock label every second.</p>
+
+<h2 style="font-size:1.5rem; font-weight:400; border-bottom:1px solid #c8ccd1; padding-bottom:0.15em; margin:1em 0 0.6em 0;">5. Code Clock Integration (Simulated & Real)</h2>
+
+<div style="background:#fef7e0; border-left:5px solid #fc3; padding:0.6em 1em; margin:1em 0;">
+  <p style="margin:0;"><strong>⚙️ Note on “Code Clock”:</strong> In the context of Java GUI documentation, a <b>code clock</b> refers to a live digital display (usually updated via <code>Timer</code> or <code>SwingWorker</code>) that shows the system time, elapsed time, or even a simulated “code execution timer”. The example above uses a <code>Timer</code> to refresh the clock label each second, mimicking a functional desktop application. For advanced use, you can attach a <code>Chronometer</code> or track user activity duration.</p>
+</div>
+
+<h2 style="font-size:1.5rem; font-weight:400; border-bottom:1px solid #c8ccd1; padding-bottom:0.15em; margin:1em 0 0.6em 0;">6. Best Practices for Java GUI Notes</h2>
+
+<ol style="margin:0.3em 0 0.8em 1.8em;">
+  <li style="margin:0.4em 0;">Always invoke Swing components on the <b>Event Dispatch Thread (EDT)</b> using <code>SwingUtilities.invokeLater()</code>.</li>
+  <li style="margin:0.4em 0;">Prefer <b>Key Bindings</b> over KeyListeners for cross‑platform consistency.</li>
+  <li style="margin:0.4em 0;">Use <b>BorderFactory</b> to create consistent borders and padding without inline styles (in Java code).</li>
+  <li style="margin:0.4em 0;">For large documents, wrap <code>JTextArea</code> inside <code>JScrollPane</code> and consider <code>DocumentListener</code> for real‑time statistics.</li>
+  <li style="margin:0.4em 0;">Separate GUI building from logic using Model‑View‑Controller architecture.</li>
+</ol>
+
+<h2 style="font-size:1.5rem; font-weight:400; border-bottom:1px solid #c8ccd1; padding-bottom:0.15em; margin:1em 0 0.6em 0;">7. Related Topics & Further Reading</h2>
+
+<ul style="margin:0.3em 0 0.8em 1.8em;">
+  <li style="margin:0.4em 0;"><b>Swing Tutorial</b> – Oracle’s official guide to building GUI applications.</li>
+  <li style="margin:0.4em 0;"><b>JavaFX vs Swing</b> – Comparison of features, performance and modern styling.</li>
+  <li style="margin:0.4em 0;"><b>FlatLaf</b> – Modern open-source look‑and‑feel for Swing applications.</li>
+  <li style="margin:0.4em 0;"><b>JTextPane / StyledDocument</b> – Advanced rich text editing in Swing.</li>
+</ul>
+
+<div style="border-top:1px solid #c8ccd1; margin:1.5em 0 0.8em 0; padding-top:0.8em; font-size:0.85rem; color:#54595d;">
+  <p style="margin:0;"><i>This document note is formatted as a standalone wiki‑style section. No external CSS, no internal &lt;style&gt; blocks, and no &lt;head&gt; tag are used. All presentation uses inline CSS (style attributes) and semantic HTML tags. The content emphasizes Java GUI concepts, includes a detailed code clock example, and follows encyclopedia structuring rules (headings, lists, tables, preformatted blocks).</i></p>
+  <p style="margin:0.5em 0 0 0;"><b>✔ Document version:</b> 2.0 — Java GUI Note (Code Clock & Swing Documentation) — public domain style note.</p>
+</div>
+
 </body>
 </html>
                     
